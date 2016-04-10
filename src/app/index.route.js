@@ -12,6 +12,11 @@
         controller: 'UserController',
         controllerAs: 'User'
       })
+      .when('/:name/repositories', {
+        templateUrl: 'app/repositories/repositories.html',
+        controller: 'RepositoriesController',
+        controllerAs: 'Repos'
+      })
       .otherwise({
         redirectTo: '/'
       });

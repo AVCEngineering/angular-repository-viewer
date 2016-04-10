@@ -1,27 +1,27 @@
 <div class="user-entry">
   <div class="user-entry__logo">
-    <img ng-src="{{user.avatar_url}}" width="60" height="60" />
+    <img ng-src="{{User.user.avatar_url}}" width="60" height="60" />
   </div>
   <div class="user-entry__header">
     <h1>Enter your GitHub username</h1>
   </div>
-  <form class="user-entry__body" ng-submit="lookupUser(name)">
+  <form class="user-entry__body" ng-submit="User.lookupUser(User.name)">
     <label>Username</label>
-    <input class="form-control" type="text" id="name" ng-model="name">
+    <input class="form-control" type="text" id="name" ng-model="User.name">
     <input class="btn btn-primary" type="submit" value="Search">
   </form>
   <div class="user-entry__details" ng-hide="notFound">
-    <h1>{{user.login}}</h1>
+    <h1>{{User.user.login}}</h1>
     <div class="user-entry__stats">
-      <a class="user-entry__stat" href="https://github.com/{{user.login}}/followers">
-        <strong>{{user.followers}}</strong>
+      <a class="user-entry__stat" href="https://github.com/{{User.user.login}}/followers">
+        <strong>{{User.user.followers}}</strong>
         <span>Followers</span>
       </a>
-      <a class="user-entry__stat" href="https://github.com/{{user.login}}/following">
-        <strong>{{user.following}}</strong>
+      <a class="user-entry__stat" href="https://github.com/{{User.user.login}}/following">
+        <strong>{{User.user.following}}</strong>
         <span>Following</span>
       </a>
     </div>
-    <button class="btn">View repositories</button>
+    <button class="btn" ng-click="User.viewRepos(User.name)">View repositories</button>
   </div>
 </div>

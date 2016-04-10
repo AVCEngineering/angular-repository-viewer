@@ -6,34 +6,41 @@
     .controller('UserController', UserController);
 
   /** @ngInject */
-  function UserController($scope, $location, $routeParams, User) {
-    $scope.name = $routeParams.name || 'AVCEngineering';
-    $scope.user = {};
-    $scope.lookupUser = lookupUser;
-    $scope.notFound = false;
+  function UserController($location, $routeParams, User) {
+    var vm = this;
+
+    vm.name = $routeParams.name || 'AVCEngineering';
+    vm.user = {};
+    vm.lookupUser = lookupUser;
+    vm.viewRepos = viewRepos;
+    vm.notFound = false;
 
     function lookupUser(name) {
-      if (_shouldReloadRoute(name, $scope.user, $scope.notFound)) {
+      if (_shouldReloadRoute(name, vm.user, vm.notFound)) {
         $location.path('/' + name);
       } else {
         User.get({ name: name }, _lookupUserSuccess, _lookupUserError);
       }
     }
 
+    function viewRepos(name) {
+      $location.path('/' + name + '/repositories');
+    }
+
     function _lookupUserSuccess(data) {
-      $scope.user = data;
-      $scope.notFound = false;
+      vm.user = data;
+      vm.notFound = false;
     }
 
     function _lookupUserError() {
-      $scope.user = {};
-      $scope.notFound = true;
+      vm.user = {};
+      vm.notFound = true;
     }
 
     function _shouldReloadRoute(name, user, notFound) {
       return (user.login || notFound) && name.toLowerCase().trim() !== user.login;
     }
 
-    $scope.lookupUser($scope.name);
+    vm.lookupUser(vm.name);
   }
 })();
