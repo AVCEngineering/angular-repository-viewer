@@ -13,11 +13,11 @@
   <div class="user-entry__details" ng-hide="notFound">
     <h1>{{User.user.login}}</h1>
     <div class="user-entry__stats">
-      <a class="user-entry__stat" href="https://github.com/{{User.user.login}}/followers">
+      <a class="user-entry__stat" ng-href="https://github.com/{{User.user.login}}/followers">
         <strong>{{User.user.followers}}</strong>
         <span>Followers</span>
       </a>
-      <a class="user-entry__stat" href="https://github.com/{{User.user.login}}/following">
+      <a class="user-entry__stat" ng-href="https://github.com/{{User.user.login}}/following">
         <strong>{{User.user.following}}</strong>
         <span>Following</span>
       </a>
