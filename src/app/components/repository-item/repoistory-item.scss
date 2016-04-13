@@ -1,0 +1,35 @@
+.repo {
+  padding: 10px;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px solid #d8dee2;
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+  &__stats {
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #888;
+  }
+
+  &__stat {
+    display: inline-block;
+    margin-left: 8px;
+    color: #888;
+    text-decoration: none;
+
+    a:hover, a:active {
+      text-decoration: underline;
+      color: #4078c0;
+    }
+
+    a:active, a:hover {
+      outline: 0;
+    }
+
+    svg {
+      vertical-align: bottom;
+    }
+  }
+}
