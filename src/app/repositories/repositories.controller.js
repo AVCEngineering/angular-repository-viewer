@@ -10,20 +10,20 @@
       var vm = this;
 
       vm.userName = $routeParams.name;
-      vm.error = false;
       vm.repos = [];
-      
+      vm.error = false;
+
+      Repository.query({ name: vm.userName }, _loadReposSuccess, _loadReposError);
+
       function _loadReposSuccess(data) {
         vm.error = false;
         vm.repos = data.sort(function(a, b) {
-          return b - a;
+          return b.stargazers_count - a.stargazers_count;
         });
       }
 
       function _loadReposError(error) {
         vm.error = error;
       }
-
-      Repository.get({ name: vm.userName }, _loadReposSuccess, _loadReposError);
     }
 })();

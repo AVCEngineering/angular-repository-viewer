@@ -6,9 +6,9 @@
     .factory('Repository', repository);
 
   /** @ngInject */
-  function repository($resource) {
-    return $resource('https://api.github.com/users/:name/repos', {}, {
-      get: { isArray: true }
+  function repository($resource, githubBaseUrl) {
+    return $resource(githubBaseUrl + 'repos/:name/:repo', {}, {
+      query: { url: githubBaseUrl + 'users/:name/repos', isArray: true }
     });
   }
 })();

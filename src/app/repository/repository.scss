@@ -1,4 +1,4 @@
-.repos {
+.repo {
   width: 400px;
   margin: 0 auto;
 
@@ -15,7 +15,11 @@
     }
   }
 
-  &__list {
-    list-style-type: none;
+  &__body {
+    padding: 20px;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #d8dee2;
+    border-radius: 5px;
   }
 }

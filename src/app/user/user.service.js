@@ -6,7 +6,7 @@
     .factory('User', user);
 
   /** @ngInject */
-  function user($resource) {
-    return $resource('https://api.github.com/users/:name');
+  function user($resource, githubBaseUrl) {
+    return $resource(githubBaseUrl + 'users/:name');
   }
 })();

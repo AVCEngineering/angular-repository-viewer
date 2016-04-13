@@ -1,4 +1,4 @@
-.repo {
+.repo-item {
   padding: 10px;
   font-size: 14px;
   background-color: #fff;
@@ -6,7 +6,13 @@
   border-radius: 5px;
   margin-bottom: 10px;
 
+  &__name,
   &__stats {
+    display: inline;
+  }
+
+  &__stats {
+    float: right;
     margin-top: 6px;
     font-size: 12px;
     font-weight: bold;
@@ -18,15 +24,6 @@
     margin-left: 8px;
     color: #888;
     text-decoration: none;
-
-    a:hover, a:active {
-      text-decoration: underline;
-      color: #4078c0;
-    }
-
-    a:active, a:hover {
-      outline: 0;
-    }
 
     svg {
       vertical-align: bottom;
