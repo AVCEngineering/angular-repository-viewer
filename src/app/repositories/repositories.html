@@ -3,6 +3,6 @@
     <h1>{{Repos.userName}}</h1>
   </div>
   <ul class="repos__list">
-    <repository-item ng-repeat="repo in Repos.repos" repo="repo" />
+    <repository-item ng-repeat="repo in Repos.repos" repo="repo" userName="Repos.userName" />
   </ul>
 </div>

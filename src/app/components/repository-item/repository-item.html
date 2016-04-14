@@ -1,6 +1,6 @@
 <li class="repo-item">
   <h3 class="repo-item__name">
-    <a ng-href="https://github.com/{{repo.full_name}}">{{repo.name}}</a>
+    <a ng-click="Repository.viewRepo(repo.owner.login, repo.name)">{{repo.name}}</a>
   </h3>
   <div class="repo-item__stats">
     <a class="repo-item__stat tooltipped tooltipped-s" ng-href="https://github.com/{{repo.full_name}}/stargazers" aria-label="Stargazers">

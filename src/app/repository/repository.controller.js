@@ -6,7 +6,7 @@
     .controller('RepositoryController', RepositoryController);
 
   /** @ngInject */
-  function RepositoryController(Repository, $routeParams) {
+  function RepositoryController($routeParams, Repository) {
     var vm = this;
 
     vm.userName = $routeParams.name;
